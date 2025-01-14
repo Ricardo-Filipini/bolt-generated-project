@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Afazeres</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Afazeres</h1>
+        <div class="theme-switcher">
+            <button onclick="setTheme('default')">Padrão</button>
+            <button onclick="setTheme('dark')">Escuro</button>
+            <button onclick="setTheme('cute')">Fofinho</button>
+        </div>
+        <div class="calendar">
+            <input type="date" id="datePicker" onchange="loadTasks()">
+        </div>
+        <div class="add-task">
+            <input type="text" id="taskTitle" placeholder="Título da Tarefa">
+            <textarea id="taskDescription" placeholder="Descrição da Tarefa"></textarea>
+            <select id="taskUser">
+                <option value="">Selecione um usuário</option>
+            </select>
+            <input type="number" id="recurrenceDays" placeholder="Recorrência (dias)">
+            <button onclick="addTask()">Adicionar Tarefa</button>
+        </div>
+        <div class="add-user">
+            <input type="text" id="userName" placeholder="Nome do Usuário">
+            <button onclick="addUser()">Adicionar Usuário</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Editar Tarefa</h2>
+            <input type="hidden" id="editTaskId">
+            <input type="text" id="editTaskTitle" placeholder="Título da Tarefa">
+            <textarea id="editTaskDescription" placeholder="Descrição da Tarefa"></textarea>
+            <select id="editTaskUser">
+                <option value="">Selecione um usuário</option>
+            </select>
+            <input type="date" id="editTaskDueDate">
+            <button onclick="saveTask()">Salvar</button>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>

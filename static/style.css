@@ -1,0 +1,201 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.theme-switcher {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.theme-switcher button {
+    margin-left: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+}
+
+.theme-switcher button:hover {
+    background-color: #d0d0d0;
+}
+
+.calendar {
+    margin-bottom: 10px;
+}
+
+.add-task, .add-user {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.add-task input[type="text"],
+.add-task textarea,
+.add-task select,
+.add-task input[type="number"],
+.add-user input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.add-task button, .add-user button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.add-task button:hover, .add-user button:hover {
+    background-color: #4cae4c;
+}
+
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+#taskList li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#taskList li.completed {
+    background-color: #e0f7e0;
+    text-decoration: line-through;
+}
+
+#taskList li button {
+    margin-left: 5px;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#taskList li button.complete-btn {
+    background-color: #5bc0de;
+    color: white;
+}
+
+#taskList li button.complete-btn:hover {
+    background-color: #46b8da;
+}
+
+#taskList li button.edit-btn {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+#taskList li button.edit-btn:hover {
+    background-color: #eea236;
+}
+
+#taskList li button.delete-btn {
+    background-color: #d9534f;
+    color: white;
+}
+
+#taskList li button.delete-btn:hover {
+    background-color: #c9302c;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-theme .container {
+    background-color: #444;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+body.dark-theme #taskList li {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-theme #taskList li.completed {
+    background-color: #666;
+}
+
+/* Cute Theme */
+body.cute-theme {
+    background-color: #ffe8f0;
+    color: #333;
+}
+
+body.cute-theme .container {
+    background-color: rgba(255,255,255,0.8);
+}
